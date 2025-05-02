@@ -1,7 +1,18 @@
-<app-navbar></app-navbar>
-<app-header></app-header>
+<mat-drawer-container class="h-full" [hasBackdrop]="true">
+    <mat-drawer #drawer [mode]="'over'">
 
-<router-outlet>
-</router-outlet>
+    </mat-drawer>
+    <mat-drawer-content>
+        <!-- <app-navbar [toggleSidenav]="toggleSidenav()"></app-navbar> -->
+        <app-navbar [toggleSidenav]="toggleSidenav.bind(this)"></app-navbar>
+        <app-header></app-header>
 
-<app-footer></app-footer>
+        <router-outlet>
+        </router-outlet>
+
+        <app-footer></app-footer>
+
+
+        <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 
 // Components
 import { NavbarComponent } from '../app/components/navbar/navbar.component';
@@ -10,6 +12,7 @@ import { FooterComponent } from '../app/components/footer/footer.component';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    MatSidenavModule,
     NavbarComponent,
     HeaderComponent,
     FooterComponent
@@ -18,5 +21,9 @@ import { FooterComponent } from '../app/components/footer/footer.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'myapp';
+  @ViewChild(MatDrawer) drawer!: MatDrawer;
+
+  async toggleSidenav() {
+    await this.drawer.toggle();
+  }
 }
