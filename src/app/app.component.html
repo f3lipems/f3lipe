@@ -5,7 +5,6 @@
                 <div class="pl-3">
                     <app-user></app-user>
 
-                    <!-- Mobile menu, show/hide based on menu state. -->
                     <div class="mt-6">
                         <div class="space-y-4 px-2 pt-2 pb-3">
                             <a href="#" 
@@ -22,8 +21,8 @@
             </div>
         </div>
     </mat-drawer>
+
     <mat-drawer-content class="bg-gray-800">
-        <!-- <app-navbar [toggleSidenav]="toggleSidenav()"></app-navbar> -->
         <app-navbar [toggleSidenav]="toggleSidenav.bind(this)"></app-navbar>
         <app-header></app-header>
 
@@ -31,8 +30,5 @@
         </router-outlet>
 
         <app-footer></app-footer>
-
-
-        <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
     </mat-drawer-content>
 </mat-drawer-container>
