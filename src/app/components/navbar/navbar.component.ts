@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { UserComponent } from "../user/user.component";
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [UserComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

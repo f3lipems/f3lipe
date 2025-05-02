@@ -7,6 +7,7 @@ import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from '../app/components/navbar/navbar.component';
 import { HeaderComponent } from '../app/components/header/header.component';
 import { FooterComponent } from '../app/components/footer/footer.component';
+import { UserComponent } from '../app/components/user/user.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { FooterComponent } from '../app/components/footer/footer.component';
     MatSidenavModule,
     NavbarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

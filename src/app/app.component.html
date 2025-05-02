@@ -1,8 +1,28 @@
 <mat-drawer-container class="h-full" [hasBackdrop]="true">
     <mat-drawer #drawer [mode]="'over'">
+        <div class="h-full bg-gray-900">
+            <div class="p-6 w-full flex items-center justify-between">
+                <div class="pl-3">
+                    <app-user></app-user>
 
+                    <!-- Mobile menu, show/hide based on menu state. -->
+                    <div class="mt-6">
+                        <div class="space-y-4 px-2 pt-2 pb-3">
+                            <a href="#" 
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Main</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Work</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tech</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contatct</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content class="bg-gray-800">
         <!-- <app-navbar [toggleSidenav]="toggleSidenav()"></app-navbar> -->
         <app-navbar [toggleSidenav]="toggleSidenav.bind(this)"></app-navbar>
         <app-header></app-header>
