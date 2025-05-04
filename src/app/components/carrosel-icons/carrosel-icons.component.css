@@ -1,0 +1,58 @@
+.carrosel-icons {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrosel-icons::before, .carrosel-icons::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.carrosel-icons::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #1E2938);
+}
+
+.carrosel-icons::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #1E2938);
+}
+
+.carrosel-icons:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 10px 0px;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.logos-slide {
+    display: inline-block;
+    white-space: nowrap;
+    animation: 30s slide linear infinite;
+}
+
+.logos-slide img{
+    height: 60px;
+    margin: 0 10px;
+}
