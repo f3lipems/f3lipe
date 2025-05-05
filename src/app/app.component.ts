@@ -8,6 +8,8 @@ import { NavbarComponent } from '../app/components/navbar/navbar.component';
 import { HeaderComponent } from '../app/components/header/header.component';
 import { FooterComponent } from '../app/components/footer/footer.component';
 import { UserComponent } from '../app/components/user/user.component';
+import { ShootingStarsComponent } from './components/shooting-stars/shooting-stars.component';
+
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,8 @@ import { UserComponent } from '../app/components/user/user.component';
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    UserComponent
+    UserComponent,
+    ShootingStarsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

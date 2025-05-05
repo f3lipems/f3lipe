@@ -25,10 +25,11 @@
     <mat-drawer-content class="bg-gray-800">
         <app-navbar [toggleSidenav]="toggleSidenav.bind(this)"></app-navbar>
         <app-header></app-header>
-
+        
         <router-outlet>
         </router-outlet>
-
+        
         <app-footer></app-footer>
+        <app-shooting-stars></app-shooting-stars>
     </mat-drawer-content>
 </mat-drawer-container>
