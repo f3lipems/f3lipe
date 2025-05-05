@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-user',
-  // imports: [BrowserAnimationsModule],
+  imports: [],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
 export class UserComponent {
 
 }

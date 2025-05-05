@@ -1,30 +1,45 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-shooting-stars',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './shooting-stars.component.html',
   styleUrl: './shooting-stars.component.css'
 })
-export class ShootingStarsComponent implements AfterViewInit{
-  @ViewChild('starCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
+export class ShootingStarsComponent implements AfterViewInit {
+  @ViewChild('starCanvas', { static: false }) canvasRef!: ElementRef<HTMLCanvasElement>;
   private ctx!: CanvasRenderingContext2D;
   private stars: any[] = [];
 
-  ngAfterViewInit(): void {
-    const canvas = this.canvasRef.nativeElement;
-    this.ctx = canvas.getContext('2d')!;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  public isBrowser: boolean;
 
-    // Resize handler
-    window.addEventListener('resize', () => {
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  ngAfterViewInit(): void {
+    this.initAnimation();
+  }
+
+  initAnimation() {
+    if (this.isBrowser) {
+      const canvas = this.canvasRef!.nativeElement;
+      this.ctx = canvas.getContext('2d')!;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-    });
 
-    this.generateStars();
-    this.animate();
+      // Resize handler
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      this.generateStars();
+      this.animate();
+    }
   }
 
   generateStars() {
