@@ -4,6 +4,15 @@
     </div>
     <div>
         <h2 class="font-medium text-gray-300">Felipe Martins da Silva</h2>
-        <h3 class="text-sm font-light text-gray-400">Software Developer</h3>
+        <h3 class="text-sm font-light text-gray-400">
+            <div class="text-wrapper">
+                <ng-container *ngFor="let text of [currentText]; trackBy: trackByFn">
+                    <div class="animated-text" [@textSwitch] [@.disabled]="!animationsEnabled">
+                        {{ text }}
+                    </div>
+                </ng-container>
+            </div>
+        </h3>
+
     </div>
 </div>
