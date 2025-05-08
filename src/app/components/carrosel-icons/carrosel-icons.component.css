@@ -54,10 +54,9 @@
 .logos-slide {
     display: inline-block;
     white-space: nowrap;
-    animation: 30s slide linear infinite;
+    animation: 40s slide linear infinite;
 }
 
 .logos-slide img{
-    /* height: 60px; */
     margin: 0 10px;
 }
