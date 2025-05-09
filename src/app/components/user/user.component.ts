@@ -27,7 +27,7 @@ import {
 })
 
 export class UserComponent implements AfterViewInit {
-  texts = ['Software Engeneer', 'Fullstack Developer', 'Mobile & Web'];
+  texts = ['Software Engineer', 'Fullstack Developer', 'Mobile & Web'];
   currentIndex = 0;
   animationsEnabled = false;
 
