@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 
@@ -24,6 +25,13 @@ import { ShootingStarsComponent } from './components/shooting-stars/shooting-sta
 })
 export class AppComponent {
   @ViewChild(MatDrawer) drawer!: MatDrawer;
+
+  constructor(private meta: Meta) {
+    this.meta.updateTag({ 
+      name: 'description', 
+      content: 'Welcome to my portfolio website, where I showcase my skills and projects as a software engineer.' 
+    });
+  }
 
   async toggleSidenav() {
     await this.drawer.toggle();
